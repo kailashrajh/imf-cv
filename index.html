@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingrid Michaela Frey - Finance and Admin Assistant</title>
+    <meta name="description" content="Finance and Admin Assistant with extensive experience in bookkeeping, debtors/creditors management, and financial administration.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        earth: {
+                            50: '#f7f8f5',
+                            100: '#eef2e8',
+                            200: '#d8e3c8',
+                            300: '#b8cc9f',
+                            400: '#94b375',
+                            500: '#759857',
+                            600: '#5d7b44',
+                            700: '#486137',
+                            800: '#3b4f2f',
+                            900: '#334229',
+                            950: '#1a2315',
+                        },
+                        forest: {
+                            50: '#f4f6f3',
+                            100: '#e6ebe3',
+                            200: '#cfd8c9',
+                            300: '#adbfa5',
+                            400: '#87a17b',
+                            500: '#6a865c',
+                            600: '#526b47',
+                            700: '#42553a',
+                            800: '#374631',
+                            900: '#2f3b29',
+                            950: '#171f14',
+                        },
+                        sage: {
+                            50: '#f6f7f4',
+                            100: '#eaede5',
+                            200: '#d6ddce',
+                            300: '#b8c5a8',
+                            400: '#95a880',
+                            500: '#778e61',
+                            600: '#5d704b',
+                            700: '#4a583c',
+                            800: '#3e4833',
+                            900: '#353e2d',
+                            950: '#1b2017',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+                        'raleway': ['Raleway', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .skill-bar {
+            width: 0%;
+            transition: width 1.2s ease-out;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f7f8f5 0%, #eef2e8 100%);
+            color: #2f3b29;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #5d7b44 0%, #759857 50%, #6a865c 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .leaf-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d8e3c8' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-earth-50 text-earth-900">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full glass-card z-50 border-b border-earth-200">
+        <div class="section-container">
+            <div class="flex items-center justify-between py-4">
+                <div class="text-xl font-bold gradient-text">
+                    IMF
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="nav-link text-earth-700 hover:text-earth-600 transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-earth-700 hover:text-earth-600 transition-colors">About</a>
+                    <a href="#skills" class="nav-link text-earth-700 hover:text-earth-600 transition-colors">Skills</a>
+                    <a href="#experience" class="nav-link text-earth-700 hover:text-earth-600 transition-colors">Experience</a>
+                    <a href="#education" class="nav-link text-earth-700 hover:text-earth-600 transition-colors">Education</a>
+                    <a href="#contact" class="nav-link text-earth-700 hover:text-earth-600 transition-colors">Contact</a>
+                </div>
+                <button id="mobile-menu-toggle" class="md:hidden text-earth-700">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full glass-card transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+        <div class="p-6">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 text-earth-700">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="mt-12 space-y-6">
+                <a href="#hero" class="block text-earth-700 hover:text-earth-600 transition-colors mobile-nav-link">Home</a>
+                <a href="#about" class="block text-earth-700 hover:text-earth-600 transition-colors mobile-nav-link">About</a>
+                <a href="#skills" class="block text-earth-700 hover:text-earth-600 transition-colors mobile-nav-link">Skills</a>
+                <a href="#experience" class="block text-earth-700 hover:text-earth-600 transition-colors mobile-nav-link">Experience</a>
+                <a href="#education" class="block text-earth-700 hover:text-earth-600 transition-colors mobile-nav-link">Education</a>
+                <a href="#contact" class="block text-earth-700 hover:text-earth-600 transition-colors mobile-nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center relative leaf-pattern">
+        <div class="section-container text-center text-earth-900">
+            <div class="animate-on-scroll">
+                <h1 class="text-5xl md:text-7xl font-bold font-raleway mb-6">
+                    <span class="gradient-text">INGRID MICHAELA</span>
+                    <span class="text-earth-800">FREY</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-earth-600 mb-8 max-w-3xl mx-auto">
+                    Finance and Admin Assistant
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <p class="text-earth-700">Ingridmichaelafrey69@gmail.com</p>
+                    <span class="hidden sm:inline-block text-earth-400">|</span>
+                    <p class="text-earth-700">079 495 2533</p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('about')" class="bg-earth-600 hover:bg-earth-500 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center gap-2 shadow-lg">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                        About Me
+                    </button>
+                    <a href="#contact" class="bg-transparent border-2 border-earth-600 text-earth-600 hover:bg-earth-600 hover:text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center gap-2">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer animate-float" onclick="scrollToSection('about')">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-earth-500 opacity-70 hover:opacity-100"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gradient-to-br from-earth-100 to-forest-100">
+        <div class="section-container">
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+                    About Me
+                </h2>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-on-scroll">
+                        <h3 class="text-2xl font-semibold mb-6 text-earth-700">
+                            Professional Background
+                        </h3>
+                        <div class="space-y-4 text-earth-600 leading-relaxed">
+                            <p>
+                                I am a dedicated Finance and Admin Assistant with over 6 years of experience 
+                                in bookkeeping, debtors and creditors management, and financial administration. 
+                                Currently working as a Bookkeeper at Workshop17, I specialize in daily financial 
+                                operations, bank reconciliations, and client relationship management.
+                            </p>
+                            <p>
+                                My expertise spans across multiple accounting systems including Xero, Sage Pastel, 
+                                SYSPRO, and Sage One. I have successfully managed accounts receivable and payable 
+                                in both ZAR and USD currencies, demonstrating adaptability in diverse business 
+                                environments from logistics to pharmaceutical and retail sectors.
+                            </p>
+                            <p>
+                                I take pride in my attention to detail, excellent communication skills, and ability 
+                                to maintain accurate financial records while providing exceptional administrative 
+                                support. My First Aid qualification and experience in risk assessment further 
+                                demonstrate my commitment to comprehensive workplace excellence.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid gap-6 animate-on-scroll">
+                        <div class="flex items-start space-x-4 p-6 glass-card rounded-lg shadow-lg">
+                            <div class="p-2 bg-earth-500 rounded-lg">
+                                <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-earth-900 mb-2">Financial Expertise</h4>
+                                <p class="text-earth-600 text-sm">
+                                    6+ years in bookkeeping, accounts management, and financial administration
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-6 glass-card rounded-lg shadow-lg">
+                            <div class="p-2 bg-forest-500 rounded-lg">
+                                <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-earth-900 mb-2">Multi-System Proficiency</h4>
+                                <p class="text-earth-600 text-sm">
+                                    Expert in Xero, Sage Pastel, SYSPRO, and multiple accounting platforms
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4 p-6 glass-card rounded-lg shadow-lg">
+                            <div class="p-2 bg-sage-500 rounded-lg">
+                                <i data-lucide="target" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-earth-900 mb-2">Diverse Industry Experience</h4>
+                                <p class="text-earth-600 text-sm">
+                                    Proven adaptability across logistics, pharmaceutical, and retail sectors
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="section-container">
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+                    Skills & Expertise
+                </h2>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Technical Skills -->
+                    <div class="space-y-8">
+                        <div class="animate-on-scroll">
+                            <h3 class="text-2xl font-semibold mb-6 text-earth-700">Core Competencies</h3>
+                            <div class="space-y-4">
+                                <div class="skill-item">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-medium text-earth-900">Bookkeeping & Financial Management</span>
+                                        <span class="text-sm text-earth-600">95%</span>
+                                    </div>
+                                    <div class="w-full bg-earth-200 rounded-full h-3">
+                                        <div class="skill-bar bg-gradient-to-r from-earth-500 to-forest-500 h-3 rounded-full" data-width="95"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-medium text-earth-900">Debtors & Creditors Management</span>
+                                        <span class="text-sm text-earth-600">90%</span>
+                                    </div>
+                                    <div class="w-full bg-earth-200 rounded-full h-3">
+                                        <div class="skill-bar bg-gradient-to-r from-earth-500 to-forest-500 h-3 rounded-full" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-medium text-earth-900">Bank Reconciliation</span>
+                                        <span class="text-sm text-earth-600">92%</span>
+                                    </div>
+                                    <div class="w-full bg-earth-200 rounded-full h-3">
+                                        <div class="skill-bar bg-gradient-to-r from-earth-500 to-forest-500 h-3 rounded-full" data-width="92"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-medium text-earth-900">Administrative Support</span>
+                                        <span class="text-sm text-earth-600">88%</span>
+                                    </div>
+                                    <div class="w-full bg-earth-200 rounded-full h-3">
+                                        <div class="skill-bar bg-gradient-to-r from-earth-500 to-forest-500 h-3 rounded-full" data-width="88"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-on-scroll">
+                            <h3 class="text-xl font-semibold mb-4 text-forest-700">Accounting Systems</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-earth-200 text-earth-700 rounded-full text-sm font-medium border border-earth-300">Xero</span>
+                                <span class="px-3 py-1 bg-earth-200 text-earth-700 rounded-full text-sm font-medium border border-earth-300">Sage Pastel</span>
+                                <span class="px-3 py-1 bg-earth-200 text-earth-700 rounded-full text-sm font-medium border border-earth-300">SYSPRO</span>
+                                <span class="px-3 py-1 bg-earth-200 text-earth-700 rounded-full text-sm font-medium border border-earth-300">Sage One</span>
+                                <span class="px-3 py-1 bg-earth-200 text-earth-700 rounded-full text-sm font-medium border border-earth-300">Sage Point of Sale</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills & Certifications -->
+                    <div class="space-y-8">
+                        <div class="animate-on-scroll">
+                            <h3 class="text-xl font-semibold mb-4 text-sage-700">Professional Qualities</h3>
+                            <div class="grid grid-cols-1 gap-3">
+                                <div class="flex items-center p-4 glass-card rounded-lg shadow-sm">
+                                    <div class="w-3 h-3 bg-earth-500 rounded-full mr-3"></div>
+                                    <span class="text-earth-900">Attention to Detail</span>
+                                </div>
+                                <div class="flex items-center p-4 glass-card rounded-lg shadow-sm">
+                                    <div class="w-3 h-3 bg-forest-500 rounded-full mr-3"></div>
+                                    <span class="text-earth-900">Client Relationship Management</span>
+                                </div>
+                                <div class="flex items-center p-4 glass-card rounded-lg shadow-sm">
+                                    <div class="w-3 h-3 bg-sage-500 rounded-full mr-3"></div>
+                                    <span class="text-earth-900">Multi-Currency Management</span>
+                                </div>
+                                <div class="flex items-center p-4 glass-card rounded-lg shadow-sm">
+                                    <div class="w-3 h-3 bg-earth-600 rounded-full mr-3"></div>
+                                    <span class="text-earth-900">Inventory Management</span>
+                                </div>
+                                <div class="flex items-center p-4 glass-card rounded-lg shadow-sm">
+                                    <div class="w-3 h-3 bg-forest-600 rounded-full mr-3"></div>
+                                    <span class="text-earth-900">Risk Assessment</span>
+                                </div>
+                                <div class="flex items-center p-4 glass-card rounded-lg shadow-sm">
+                                    <div class="w-3 h-3 bg-sage-600 rounded-full mr-3"></div>
+                                    <span class="text-earth-900">First Aid Certified</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-on-scroll">
+                            <h3 class="text-xl font-semibold mb-4 text-earth-700">Languages</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 glass-card rounded-lg">
+                                    <span class="font-medium">English</span>
+                                    <span class="text-sm text-earth-600">Fluent</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 glass-card rounded-lg">
+                                    <span class="font-medium">Afrikaans</span>
+                                    <span class="text-sm text-earth-600">Fluent</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="animate-on-scroll">
+                            <h3 class="text-xl font-semibold mb-4 text-forest-700">Software Proficiency</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-forest-200 text-forest-700 rounded-full text-sm font-medium border border-forest-300">MS Excel</span>
+                                <span class="px-3 py-1 bg-forest-200 text-forest-700 rounded-full text-sm font-medium border border-forest-300">MS Word</span>
+                                <span class="px-3 py-1 bg-forest-200 text-forest-700 rounded-full text-sm font-medium border border-forest-300">Online Banking</span>
+                                <span class="px-3 py-1 bg-forest-200 text-forest-700 rounded-full text-sm font-medium border border-forest-300">Zoho Cliq</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-br from-forest-50 to-sage-50">
+        <div class="section-container">
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+                    Professional Experience
+                </h2>
+
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-0.5 bg-earth-300 h-full"></div>
+
+                    <!-- Workshop17 -->
+                    <div class="relative mb-12 animate-on-scroll">
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-earth-500 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8">
+                            <div class="md:text-right">
+                                <div class="glass-card rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105">
+                                    <h3 class="text-2xl font-bold text-earth-900 mb-2">Workshop17</h3>
+                                    
+                                    <div class="mb-4">
+                                        <h4 class="text-lg font-semibold text-earth-600">Bookkeeper</h4>
+                                        <div class="flex items-center text-earth-500 text-sm mb-2">
+                                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                                            April 2025 - Present
+                                            <span class="ml-2 px-2 py-1 bg-earth-200 text-earth-700 rounded-full text-xs">Current</span>
+                                        </div>
+                                        <div class="flex items-center text-earth-500 text-sm mb-2">
+                                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                                            Remote
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <h5 class="font-semibold text-earth-700 mb-2">Key Responsibilities:</h5>
+                                        <ul class="space-y-2">
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-earth-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Action credit notes daily on Xero
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-earth-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Daily import of banks (PayFast, eBucks, Zapper transactions)
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-earth-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Bank reconciliation and aged receivables reporting
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-earth-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Weekly debtors' reports and client communication
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-earth-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Daily billing of supplier invoices and ticket management via Zoho Cliq
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upfreight Logistics -->
+                    <div class="relative mb-12 animate-on-scroll">
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-forest-500 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8">
+                            <div class="md:col-start-2">
+                                <div class="glass-card rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105">
+                                    <h3 class="text-2xl font-bold text-earth-900 mb-2">Upfreight Logistics (Pty) Ltd</h3>
+                                    
+                                    <div class="mb-4">
+                                        <h4 class="text-lg font-semibold text-earth-600">Bookkeeper (Debtors and Creditors)</h4>
+                                        <div class="flex items-center text-earth-500 text-sm mb-2">
+                                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                                            April 2023 - January 2025
+                                        </div>
+                                        <div class="flex items-center text-earth-500 text-sm mb-4">
+                                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                                            Boksburg
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <h5 class="font-semibold text-earth-700 mb-2">Key Achievements:</h5>
+                                        <ul class="space-y-2">
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-forest-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Managed cash flow and net position analysis
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-forest-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Handled accounts receivable/payable in ZAR and USD
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-forest-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Created invoices and credits using Sage Pastel
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-forest-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Client and transporter communication management
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roco Fittings (Recent) -->
+                    <div class="relative mb-12 animate-on-scroll">
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sage-500 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8">
+                            <div class="md:text-right">
+                                <div class="glass-card rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105">
+                                    <h3 class="text-2xl font-bold text-earth-900 mb-2">Roco Fittings</h3>
+                                    
+                                    <div class="mb-4">
+                                        <h4 class="text-lg font-semibold text-earth-600">Finance and Admin Assistant (Debtors)</h4>
+                                        <div class="flex items-center text-earth-500 text-sm mb-2">
+                                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                                            January 2022 - April 2023
+                                        </div>
+                                        <div class="flex items-center text-earth-500 text-sm mb-4">
+                                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                                            Sandton
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <h5 class="font-semibold text-earth-700 mb-2">Key Responsibilities:</h5>
+                                        <ul class="space-y-2">
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-sage-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Intercompany accounts and debtors' reconciliation
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-sage-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Fleet management and consumables inventory control
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-sage-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Risk assessment and First Aid responsibilities
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-sage-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                OHS files compilation for multiple branches
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pharmaceutical Contractors -->
+                    <div class="relative mb-12 animate-on-scroll">
+                        <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-earth-400 rounded-full border-4 border-white shadow-lg"></div>
+                        <div class="ml-12 md:ml-0 md:grid md:grid-cols-2 md:gap-8">
+                            <div class="md:col-start-2">
+                                <div class="glass-card rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105">
+                                    <h3 class="text-2xl font-bold text-earth-900 mb-2">Pharmaceutical Contractors</h3>
+                                    
+                                    <div class="mb-4">
+                                        <h4 class="text-lg font-semibold text-earth-600">Finance and Admin Assistant (Creditors)</h4>
+                                        <div class="flex items-center text-earth-500 text-sm mb-2">
+                                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                                            September 2021 - December 2021
+                                        </div>
+                                        <div class="flex items-center text-earth-500 text-sm mb-4">
+                                            <i data-lucide="map-pin" class="w-4 h-4 mr-2"></i>
+                                            Isando
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <h5 class="font-semibold text-earth-700 mb-2">Key Responsibilities:</h5>
+                                        <ul class="space-y-2">
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-earth-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Processing invoices and credit notes on SYSPRO
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-earth-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Month-end account reconciliations for company accountant
+                                            </li>
+                                            <li class="text-earth-600 text-sm flex items-start">
+                                                <span class="w-2 h-2 bg-earth-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                                Sourcing updated BEE certificates for supplier database
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="section-container">
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 gradient-text">
+                    Education & Certifications
+                </h2>
+
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    <!-- Education -->
+                    <div class="glass-card rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:transform hover:scale-105 animate-on-scroll">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-16 h-16 bg-earth-500 bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i data-lucide="graduation-cap" class="w-8 h-8 text-earth-600"></i>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-earth-900 mb-2 text-center">
+                            Secondary Education
+                        </h3>
+                        
+                        <h4 class="text-xl font-semibold text-earth-600 mb-4 text-center">
+                            National Senior Certificate
+                        </h4>
+                        
+                        <div class="flex items-center justify-center text-earth-500 text-sm mb-6">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            2015
+                        </div>
+                        
+                        <div class="border-t border-earth-200 pt-4">
+                            <div class="bg-earth-50 rounded-lg p-4 text-center">
+                                <h5 class="font-semibold text-earth-700 mb-2">Achievement</h5>
+                                <p class="text-earth-600">Bachelor's Pass</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications -->
+                    <div class="space-y-6">
+                        <div class="glass-card rounded-lg p-6 hover:shadow-lg transition-all duration-300 animate-on-scroll">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="p-2 bg-earth-500 bg-opacity-20 rounded-lg">
+                                        <i data-lucide="award" class="w-6 h-6 text-earth-600"></i>
+                                    </div>
+                                </div>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-earth-500"></i>
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-earth-900 mb-2">
+                                Accounting and Bookkeeping Short Course
+                            </h3>
+                            <p class="text-earth-600 font-medium mb-2">International Open Academy</p>
+                            
+                            <div class="flex items-center space-x-4 text-sm text-earth-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                    <span>2020</span>
+                                </div>
+                            </div>
+
+                            <p class="text-earth-600 text-sm leading-relaxed">
+                                Comprehensive training in accounting principles, bookkeeping practices, and financial management fundamentals.
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-lg p-6 hover:shadow-lg transition-all duration-300 animate-on-scroll">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="p-2 bg-forest-500 bg-opacity-20 rounded-lg">
+                                        <i data-lucide="award" class="w-6 h-6 text-forest-600"></i>
+                                    </div>
+                                </div>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-forest-500"></i>
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-earth-900 mb-2">
+                                Au Pair Training Course
+                            </h3>
+                            <p class="text-earth-600 font-medium mb-2">Little Sunshines Au Pair Agency</p>
+                            
+                            <div class="flex items-center space-x-4 text-sm text-earth-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                    <span>2019</span>
+                                </div>
+                            </div>
+
+                            <p class="text-earth-600 text-sm leading-relaxed">
+                                Professional training in childcare, safety protocols, and personal development skills.
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-lg p-6 hover:shadow-lg transition-all duration-300 animate-on-scroll">
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="p-2 bg-sage-500 bg-opacity-20 rounded-lg">
+                                        <i data-lucide="shield-check" class="w-6 h-6 text-sage-600"></i>
+                                    </div>
+                                </div>
+                                <i data-lucide="check-circle" class="w-5 h-5 text-sage-500"></i>
+                            </div>
+
+                            <h3 class="text-lg font-semibold text-earth-900 mb-2">
+                                First Aid NQF Level 1
+                            </h3>
+                            <p class="text-earth-600 font-medium mb-2">Certified Training Provider</p>
+                            
+                            <div class="flex items-center space-x-4 text-sm text-earth-500 mb-3">
+                                <div class="flex items-center space-x-1">
+                                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                                    <span>2022</span>
+                                </div>
+                            </div>
+
+                            <p class="text-earth-600 text-sm leading-relaxed">
+                                Qualified to provide first aid assistance and emergency response in workplace environments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-earth-800 to-forest-800 text-white">
+        <div class="section-container">
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+                    Get In Touch
+                </h2>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12 animate-on-scroll">
+                        <p class="text-xl text-earth-200 mb-6">
+                            I'm always interested in discussing new opportunities in finance and administration.
+                        </p>
+                        <p class="text-earth-300">
+                            Whether you're looking for a dedicated bookkeeper or finance assistant, I'd love to contribute to your team's success.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8 mb-12">
+                        <div class="text-center p-6 glass-card rounded-lg transition-all duration-300 hover:transform hover:scale-105 animate-on-scroll">
+                            <div class="w-12 h-12 bg-earth-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Email</h3>
+                            <a href="mailto:Ingridmichaelafrey69@gmail.com" class="text-earth-300 hover:text-earth-200 transition-colors">
+                                Ingridmichaelafrey69@gmail.com
+                            </a>
+                        </div>
+
+                        <div class="text-center p-6 glass-card rounded-lg transition-all duration-300 hover:transform hover:scale-105 animate-on-scroll">
+                            <div class="w-12 h-12 bg-forest-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Phone</h3>
+                            <a href="tel:0794952533" class="text-earth-300 hover:text-earth-200 transition-colors">
+                                079 495 2533
+                            </a>
+                        </div>
+
+                        <div class="text-center p-6 glass-card rounded-lg transition-all duration-300 hover:transform hover:scale-105 animate-on-scroll">
+                            <div class="w-12 h-12 bg-sage-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold mb-2">Location</h3>
+                            <span class="text-earth-300">South Africa</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center animate-on-scroll">
+                        <div class="flex justify-center space-x-6">
+                            <a href="mailto:Ingridmichaelafrey69@gmail.com" class="bg-earth-600 hover:bg-earth-500 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center gap-2 shadow-lg">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                Send Email
+                            </a>
+                            <a href="tel:0794952533" class="bg-transparent border-2 border-earth-400 text-earth-200 hover:bg-earth-600 hover:border-earth-600 px-8 py-3 rounded-lg font-medium transition-colors inline-flex items-center gap-2">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-16 pt-8 border-t border-earth-600 text-center">
+            <p class="text-earth-400">
+                © 2025 Professional CV. Built with care and attention to detail.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+        });
+        
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+        });
+        
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate skill bars
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach((bar, index) => {
+                        setTimeout(() => {
+                            const width = bar.getAttribute('data-width');
+                            bar.style.width = width + '%';
+                        }, index * 150);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function updateActiveNavLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-earth-600');
+                link.classList.add('text-earth-700');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.remove('text-earth-700');
+                    link.classList.add('text-earth-600');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', updateActiveNavLink);
+        updateActiveNavLink(); // Initial call
+    </script>
+</body>
+</html>
